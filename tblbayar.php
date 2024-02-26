@@ -70,7 +70,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                       
+					<li class="nav-item"><a class="nav-link" href="siswa.php">SISWA</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html">LOGOUT</a></li>
                     </ul>
                 </div>
@@ -87,7 +87,7 @@
 			<div class="col-10">	
 			<form class="form-inline mt-5 mx-auto">
 				
-				<a style="color: white" href="tbltanggapan.php" class="btn btn-secondary">tampilkan semua</a>
+				<a style="color: white" href="tblbayar.php" class="btn btn-secondary">tampilkan semua</a>
 			</form>
 			<table class="table table-bordered bg-light mt-5">
 				<thead class="mawar">

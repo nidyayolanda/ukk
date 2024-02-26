@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient( rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(biru.jpg);
+            background: linear-gradient( rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(d.jpg);
             font-family: 'Source Sans Pro', sans-serif;
             color: white;
             display: flex;
@@ -49,51 +49,44 @@
         }
 
         button:hover {
-            background-color: ;
+            background-color:#2471A3;
         }
     </style>
 </head>
 
 <body>
-    <h1>Halaman pembayaran SPP</h1>
+<h1>Halaman pembayaran SPP</h1>
     <div class="form-container">
-    <?php
+        <?php
         include 'koneksi.php';
         if (isset($_POST["ok"])){
-           
             $NIS = $_POST["NIS"];
             $nama = $_POST["nama"];
             $id_kelas = $_POST["id_kelas"];
-            $input = mysqli_query($koneksi, "insert into siswa (NIS,nama , id_kelas) values ( '$NIS','$nama', '$id_kelas')");
+
           
-           echo "<div class='alert alert-success'> SUKSES</div>";
+            $input = mysqli_query($koneksi, "insert into siswa (NIS, nama, id_kelas) values ('$NIS', '$nama', '$id_kelas')");
+          
+          
         }
         ?>
-        
-        <h2>Form pembayaran SPP</h2>
+        <h2>FORM SISWA</h2>
+        <form action="siswa.php" method="post">
+       
+        <label for="">NIS:</label>
+            <input type="text" id="" name="NIS" required>
 
-<label for="NIS">NIS:</label>
+      
+        <label for="">Nama:</label>
+            <input type="text" id="" name="nama" required>
 
-<input type=”text” id=”” name="NIS" required>
+        <label for="">ID Kelas</label>
+            <input type="text" id="" name="id_kelas" required>
 
-<label for="nama"> Nama:</label>
- <input type="text" id="" name="nama" required>
-
-<label for=id_kelas> ID Kelas:</label>
-
-<input type=”text” id="" name=id_kelas required>
-
-<BR>
-
-<center><button type=”submit” name=”ok”>Simpan</button></center>
-
-<BR>
-
-<center><a href=tblsiswa.php target=”_blank”><button type=”button”>Lihat pembayaran Lainnya</button></a></center>
-
-</div>
-
-</form>
+           <center><button type="submit" name="ok">Submit</button></center>
+           <BR>
+           <center><a href="tblsiswa.php" target="_blank"><button type="button">Lihat Data Lainnya</button></a></center> 
+        </form>
     </div>   
 </body>
 

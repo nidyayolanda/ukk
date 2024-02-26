@@ -26,6 +26,49 @@ body .roti {
   animation: animateBackground 20s linear infinite;
 }
 
+.a{
+  
+  background-color: #0033ff;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px; /* Added margin to separate buttons */
+}       
+
+.b{
+  
+  background-color: #0033ff;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px; /* Added margin to separate buttons */
+}       
+
+.c{
+  
+  background-color: #0033ff;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px; /* Added margin to separate buttons */
+}       
+
+
 @keyframes animateBackground {
   0% {
     background-position: 0 0;
@@ -48,16 +91,14 @@ body .roti {
                 
           
                     <div style="text-align: center; margin-top: 100px;">
-                        <a href="pembayaran.php" class="btn btn-light">PEMBAYARAN </a>
+                        <a href="pembayaran.php" class="c">PEMBAYARAN </a>
                        
-                    </div>
+                    
+                        <a href="siswa.php" class="a">SISWA </a>
+
+                        <a href="kelas.php" class="b">KELAS </a>
+                        </div>
                    <br>
-                        <a href="siswa.php" class="btn btn-light">SISWA </a>
-                       
-                   
-                   
-                        <a href="kelas.php" class="btn btn-light">KELAS </a>
-                       
                   
             
                

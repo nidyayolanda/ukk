@@ -65,7 +65,8 @@
             $id_kelas = $_POST["id_kelas"];
             $nama_kelas = $_POST["nama_kelas"];
             $kompetensi_keahlian = $_POST["kompetensi_keahlian"];
-            $input = mysqli_query($koneksi, "insert into kelas (id_kelas,	nama_kelas , kompetensi_keahlian) values ( '$id_kelas','$nama_kelas', '$kompetensi_keahlian')");
+            $input = mysqli_query($koneksi, "insert into kelas (id_kelas,	nama_kelas , kompetensi_keahlian)
+             values ( '$id_kelas','$nama_kelas', '$kompetensi_keahlian')");
           
            echo "<div class='alert alert-success'> SUKSES</div>";
         }

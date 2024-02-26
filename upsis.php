@@ -1,17 +1,18 @@
 <?php
 include 'koneksi.php';
 if(isset($_POST["ok"])){
+    $NIS = $_POST["NIS"];
+    $nama = $_POST["nama"];
     $id_kelas = $_POST["id_kelas"];
-  $nama_kelas = $_POST["nama_kelas"];
-  $kompetensi_keahlian = $_POST["kompetensi_keahlian"];
-
-
-  $insert = mysqli_query($koneksi, "UPDATE kelas SET kompetensi_keahlian= '$kompetensi_keahlian' WHERE id_kelas=$id_kelas");
+    
+    $insert = mysqli_query($koneksi, "UPDATE siswa SET id_kelas= '$id_kelas' WHERE NIS= $NIS");
   
     if($insert) {
-        echo '<script>alert("Berhasil edit Pembayaran"); window.location.href = "tblkelas.php";</script>';
-    }else{
-        echo '<script>alert("gagal edit Pembayaran");</script>';
+    
+    
+        echo '<script>alert("Berhasil edit Data Siswa"); window.location.href = "tblsiswa.php";</script>';
+    } else {
+        echo '<script>alert("Gagal edit Data Siswa");</script>';
     }
 }
 ?>
@@ -80,8 +81,8 @@ if(isset($_POST["ok"])){
     include 'koneksi.php';
     if (isset($_POST["ok"]))
           include 'koneksi.php';
-          $id_kelas = $_GET['id_kelas'];
-          $update = mysqli_query($koneksi, "SELECT * FROM kelas WHERE id_kelas='$id_kelas'");
+          $NIS = $_GET['NIS'];
+          $update = mysqli_query($koneksi, "SELECT * FROM siswa WHERE NIS='$NIS'");
           foreach ($update as $row) {
 
           }
@@ -89,22 +90,22 @@ if(isset($_POST["ok"])){
           ?>
          
             <br>
-            <h2>FORM KELAS</h2>
+            <h2>FORM SISWA</h2>
         <form action="" method="post">
       
+            <label for="">NIS:</label>
+            <input type="text" id="" name="NIS" value="<?php echo $row['NIS'];?>"  required>
+
+            <label for="">NAMA :</label>
+            <input type="text" id="nama" name="nama" value="<?php echo $row['nama'];?>"  required>
+
             <label for="">ID KELAS:</label>
-            <input type="text" id="" name="id_kelas" value= "<?php echo $row ['id_kelas'];?>" required>
-
-            <label for="">NAMA KELAS:</label>
-            <input type="text" id="nama" name="nama_kelas"  value= "<?php echo $row ['nama_kelas'];?>"required>
-
-            <label for="">KOMPETENSI KEAHLIAN:</label>
-            <input type="text" id="" name="kompetensi_keahlian" value= "<?php echo $row ['kompetensi_keahlian'];?>" required>
+            <input type="text" id="" name="id_kelas" value="<?php echo $row['id_kelas'];?>"  required>
 
 
            <center><button type="submit" name="ok">Submit</button></center>
            <BR>
-           <center><a href="tblkelas.php" target="_blank"><button type="button">Lihat KELAS Lainnya</button></a></center> 
+           <center><a href="tblsiswa.php" target="_blank"><button type="button">Lihat Siswa Lainnya</button></a></center> 
         </form>
     </div>   
 </body>

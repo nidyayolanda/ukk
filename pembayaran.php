@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient( rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(biru.jpg);
+            background: linear-gradient( rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(d.jpg);
             font-family: 'Source Sans Pro', sans-serif;
             color: white;
             display: flex;
@@ -49,62 +49,50 @@
         }
 
         button:hover {
-            background-color: ;
+            background-color:#2471A3;
         }
     </style>
 </head>
 
 <body>
-    <h1>Halaman pembayaran SPP</h1>
+<h1>Halaman pembayaran SPP</h1>
     <div class="form-container">
-    <?php
+        <?php
         include 'koneksi.php';
         if (isset($_POST["ok"])){
-           
             $id_pembayaran = $_POST["id_pembayaran"];
             $id_petugas = $_POST["id_petugas"];
             $NIS = $_POST["NIS"];
             $tgl_bayar = $_POST["tgl_bayar"];
+            $NIS = $_POST["NIS"];
             $jumlah_bayar = $_POST["jumlah_bayar"];
-           $input = mysqli_query($koneksi, "insert into pembayaran (id_pembayaran,	id_petugas , NIS, tgl_bayar, jumlah_bayar) values ( '$id_pembayaran','$id_petugas', '$NIS', '$tgl_bayar', '$jumlah_bayar')");
-           
-           echo "<div class='alert alert-success'> PEMBAYARAN SUKSES</div>";
+            $input = mysqli_query($koneksi, "insert into pembayaran (id_pembayaran, id_petugas , NIS, tgl_bayar, jumlah_bayar) values ( '$id_pembayaran', '$id_petugas','$NIS','$tgl_bayar', '$jumlah_bayar')");
+          
+          
         }
         ?>
-        
-        <h2>Form pembayaran SPP</h2>
+        <h2>FORM PEMBAYARAN</h2>
+      <form action="pembayaran.php" method="POST">
+        <label for="">ID PEMBAYARAN:</label>
+            <input type="text" id="" name="id_pembayaran" required>
 
-<form action="pembayaran.php" method=”post”>
+            <label for="">ID PETUGAS</label>
+            <input type="text" id="" name="id_petugas" required>
+      
+            <label for="">NIS:</label>
+            <input type="text" id="" name="NIS" required>
 
-
-
-<label for=”id_petugas”>ID Petugas:</label>
-
-<input type=”text” id=”” name=”id_petugas” required>
-
-<label for=”nis”>NIS:</label>
-<input type=”text” id=”” name="NIS" required>
-
-
-
-<label for="tgl_bayar">Tanggal Pembayaran:</label>
+            <label for="">TANGGAL BAYAR:</label>
             <input type="date" id="" name="tgl_bayar" required>
 
-<label for=”jumlah_bayar”>Jumlah Bayar:</label>
+            <label for="">JUMLAH BAYAR:</label>
+            <input type="text" id="" name="jumlah_bayar" required>
 
-<input type=”text” id="" name=”jumlah_bayar” required>
 
-<BR>
-
-<center><button type=”submit” name=”ok”>Simpan</button></center>
-
-<BR>
-
-<center><a href=tblbayar.php” target=”_blank”><button type=”button”>Lihat pembayaran Lainnya</button></a></center>
-
-</div>
-
-</form>
+           <center><button type="submit" name="ok">Submit</button></center>
+           <BR>
+           <center><a href="tblbayar.php" target="_blank"><button type="button">Lihat Data Lainnya</button></a></center> 
+        </form>
     </div>   
 </body>
 

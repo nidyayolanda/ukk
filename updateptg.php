@@ -7,7 +7,9 @@ if(isset($_POST["ok"])){
   $tgl_bayar = $_POST["tgl_bayar"];
   $jumlah_bayar = $_POST["jumlah_bayar"];
 
-  $update = mysqli_query($koneksi, "UPDATE pembayaran SET pembayaran= '$pembayaran' WHERE id_pembayaran=$id_pembayaran");
+ 
+  $update = mysqli_query($koneksi, "UPDATE pembayaran SET jumlah_bayar='$jumlah_bayar' WHERE id_pembayaran=$id_pembayaran");
+  
   
     if($update) {
         echo '<script>alert("Berhasil edit Pembayaran"); window.location.href = "tblbayar.php";</script>';
